@@ -1,0 +1,11 @@
+.env
+.claude/.credentials.json
+.claude/history.jsonl
+.claude/cache/
+.claude/debug/
+.claude/session-env/
+.claude/shell-snapshots/
+.claude/backups/
+.claude/ide/
+.claude/todos/
+.vercel
