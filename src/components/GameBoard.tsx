@@ -20,6 +20,7 @@ interface Props {
 export function GameBoard({ game, setGame, onWin }: Props) {
   const [toasts, setToasts] = useState<Toast[]>([]);
   const [detectedWords, setDetectedWords] = useState<string[]>([]);
+  const [markedSquareId, setMarkedSquareId] = useState<string | null>(null);
 
   const { fillSquare, toggleSquare } = useGame(game, setGame, onWin);
 
@@ -73,10 +74,10 @@ export function GameBoard({ game, setGame, onWin }: Props) {
     setDetectedWords([]);
   }, [game.category, setGame]);
 
-  const handleSquareClick = useCallback((squareId: string, word: string) => {
+  const handleSquareClick = useCallback((squareId: string, _word: string) => {
     toggleSquare(squareId);
-    addToast(`"${word}" marked!`);
-  }, [toggleSquare, addToast]);
+    setMarkedSquareId(squareId);
+  }, [toggleSquare]);
 
   const category = CATEGORIES.find(c => c.id === game.category);
   const winningIds = new Set(game.winningLine?.squares ?? []);
@@ -97,6 +98,7 @@ export function GameBoard({ game, setGame, onWin }: Props) {
           card={game.card}
           winningSquareIds={winningIds}
           onSquareClick={handleSquareClick}
+          markedSquareId={markedSquareId}
         />
 
         <GameControls

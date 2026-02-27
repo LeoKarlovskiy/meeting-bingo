@@ -5,11 +5,12 @@ interface Props {
   card: BingoCardType;
   winningSquareIds: Set<string>;
   onSquareClick: (squareId: string, word: string) => void;
+  markedSquareId?: string | null;
 }
 
 const HEADERS = ['B', 'I', 'N', 'G', 'O'];
 
-export function BingoCard({ card, winningSquareIds, onSquareClick }: Props) {
+export function BingoCard({ card, winningSquareIds, onSquareClick, markedSquareId }: Props) {
   return (
     <div className="w-full max-w-sm mx-auto">
       <div className="grid grid-cols-5 gap-1 mb-1">
@@ -25,6 +26,7 @@ export function BingoCard({ card, winningSquareIds, onSquareClick }: Props) {
             key={square.id}
             square={square}
             isWinningSquare={winningSquareIds.has(square.id)}
+            isMarked={square.id === markedSquareId}
             onClick={() => onSquareClick(square.id, square.word)}
           />
         ))}
