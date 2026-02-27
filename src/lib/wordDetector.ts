@@ -34,6 +34,34 @@ export const WORD_ALIASES: Record<string, string[]> = {
   'api': ['a.p.i.'],
   'devops': ['dev ops', 'dev-ops'],
   'a/b test': ['a b test', 'ab test', 'split test'],
+
+  // Trump Talk
+  'maga': ['make america great again'],
+
+  // Hockey
+  'face-off': ['faceoff'],
+  'slapshot': ['slap shot'],
+  'high-sticking': ['high sticking'],
+  'cross-checking': ['cross checking'],
+  'short-handed': ['shorthanded'],
+  'five-hole': ['five hole'],
+  'five-on-three': ['five on three'],
+  'two-on-one': ['two on one'],
+  'odd-man rush': ['odd man rush'],
+
+  // AI Talk
+  'llm': ['large language model'],
+  'rag': ['retrieval augmented generation'],
+  'gpt': ['generative pre-trained transformer'],
+  'agi': ['artificial general intelligence'],
+  'rlhf': ['reinforcement learning from human feedback'],
+  'chain of thought': ['chain-of-thought'],
+  'fine-tuning': ['fine tuning', 'finetuning'],
+  'red-teaming': ['red teaming'],
+  'ai-powered': ['ai powered'],
+  'multi-agent': ['multi agent'],
+  'zero-shot': ['zero shot'],
+  'few-shot': ['few shot'],
 };
 
 export function detectWordsWithAliases(
